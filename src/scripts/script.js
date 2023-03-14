@@ -1,4 +1,4 @@
-const pass = document.querySelector('#password');
+const pass = document.querySelector('#password')
 const nick = document.querySelector('#nickname')
 const checkPass = document.querySelector('#check-password')
 const email = document.querySelector('#email')
@@ -18,25 +18,22 @@ let messageNickname= "";
 let messageEmail = "";
 
 const validation = () => {
-     if(pass.value.length < minValue){
-        messagePasswd='Hasło musi zawierać co najmniej 10 znaków w tym jedna litere, jedna cyfre i jeden znak specjalny!';
-    }
-    passwordValidation1.textContent = messagePasswd;
-    if(checkPass === pass){
-        messagePasswd2=''
+     if(pass.value.length > minValue && pass.value.match(letters) && pass.value.match(numbers) && pass.value.match(special)){
     }else{
+        messagePasswd='Hasło musi zawierać co najmniej 10 znaków w tym jedna litere, jedna cyfre i jeden znak specjalny!';
+    }  
+    passwordValidation1.textContent = messagePasswd;
+    if(checkPass.value !== pass.value){
         messagePasswd2='Podane hasła są różne'
     }
     passwordValidation2.textContent = messagePasswd2;
 
-    if(!regex.test(email)){
-        
-    } else {
+    if(nick.value.match(special)){
         messageNickname = 'Nickname nie może zawierać znaków specjalnych'
-    }
+    } 
     nicknameValidation.textContent = messageNickname;
     
-    if(regex.test(email)){
+    if(!regex.test(email)){
     }else {
         messageEmail = 'Podany email jest błędny'
     }
