@@ -20,22 +20,22 @@ let messageEmail = "";
 const validation = () => {
      if(pass.value.length > minValue && pass.value.match(letters) && pass.value.match(numbers) && pass.value.match(special)){
     }else{
-        messagePasswd='Hasło musi zawierać co najmniej 10 znaków w tym jedna litere, jedna cyfre i jeden znak specjalny!';
+        messagePasswd='The password must contain at least 10 characters including one letter, one number and one special character!';
     }  
     passwordValidation1.textContent = messagePasswd;
     if(checkPass.value !== pass.value){
-        messagePasswd2='Podane hasła są różne'
+        messagePasswd2='The passwords given are different'
     }
     passwordValidation2.textContent = messagePasswd2;
 
     if(nick.value.match(special)){
-        messageNickname = 'Nickname nie może zawierać znaków specjalnych'
+        messageNickname = 'Nickname must not contain special characters'
     } 
     nicknameValidation.textContent = messageNickname;
     
     if(!regex.test(email)){
     }else {
-        messageEmail = 'Podany email jest błędny'
+        messageEmail = 'The email provided is incorrect'
     }
     emailValidation.textContent = messageEmail
 }
