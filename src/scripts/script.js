@@ -33,7 +33,7 @@ const validation = () => {
     } 
     nicknameValidation.textContent = messageNickname;
     
-    if(!regex.test(email)){
+    if(regex.test(email)){
     }else {
         messageEmail = 'The email provided is incorrect'
     }
